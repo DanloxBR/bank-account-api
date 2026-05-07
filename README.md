@@ -2,112 +2,112 @@
 
 # 💳 Banking API
 
-### Secure Digital Banking REST API built with Java + Spring Boot
+### API REST Bancária Segura desenvolvida com Java + Spring Boot
 
 <p align="center">
 
 <img src="https://img.shields.io/badge/Java-8-red?style=for-the-badge&logo=java" />
 <img src="https://img.shields.io/badge/Spring_Boot-2.7-success?style=for-the-badge&logo=springboot" />
 <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql" />
-<img src="https://img.shields.io/badge/JWT-Authentication-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/JWT-Autenticação-orange?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Maven-Build-red?style=for-the-badge&logo=apachemaven" />
 
 </p>
 
 ---
 
-### 🚀 A complete backend banking system with authentication, transactions, and account management.
+### 🚀 Backend bancário completo com autenticação JWT, gerenciamento de contas e operações financeiras.
 
 </div>
 
 ---
 
-# 📖 Overview
+# 📖 Sobre o Projeto
 
-This project simulates a modern digital banking backend using enterprise-level technologies and architecture patterns.
+Este projeto simula um sistema bancário digital moderno utilizando tecnologias e padrões de arquitetura utilizados no mercado.
 
-The API provides secure financial operations such as:
+A API permite operações financeiras seguras como:
 
-- User Authentication
-- Account Management
-- Deposits
-- Withdrawals
-- Transfers
-- Bank Statements
+- Autenticação de usuários
+- Gerenciamento de contas
+- Depósitos
+- Saques
+- Transferências
+- Extrato bancário
 
-Built with focus on:
+O projeto foi desenvolvido com foco em:
 
-✅ Security  
-✅ Scalability  
-✅ Clean Architecture  
-✅ RESTful Principles  
-✅ Maintainability  
+✅ Segurança  
+✅ Escalabilidade  
+✅ Arquitetura Limpa  
+✅ Boas Práticas REST  
+✅ Manutenibilidade  
 
 ---
 
-# ✨ Features
+# ✨ Funcionalidades
 
-## 🔐 Authentication & Security
+## 🔐 Autenticação & Segurança
 
-- JWT Authentication
+- Autenticação JWT
 - Spring Security
-- BCrypt Password Encryption
-- Protected Routes
-- Stateless Authentication
+- Criptografia de senha com BCrypt
+- Rotas protegidas
+- Autenticação Stateless
 
 ---
 
-## 👤 User Management
+## 👤 Gerenciamento de Usuários
 
-- User Registration
-- User Authentication
-
----
-
-## 🏦 Account Management
-
-- Create Bank Account
-- Balance Inquiry
+- Cadastro de usuários
+- Login de usuários
 
 ---
 
-## 💸 Financial Operations
+## 🏦 Gerenciamento de Contas
 
-- Deposit
-- Withdraw
-- Transfer Between Accounts
-
----
-
-## 📄 Statement System
-
-- Transaction History
-- Bank Statement
+- Criação de contas bancárias
+- Consulta de saldo
 
 ---
 
-# 🛠 Tech Stack
+## 💸 Operações Financeiras
+
+- Depósito
+- Saque
+- Transferência entre contas
+
+---
+
+## 📄 Sistema de Extrato
+
+- Histórico de transações
+- Extrato bancário
+
+---
+
+# 🛠 Tecnologias Utilizadas
 
 <div align="center">
 
-| Technology | Description |
+| Tecnologia | Descrição |
 |---|---|
-| ☕ Java 8 | Backend Language |
-| 🌱 Spring Boot | Main Framework |
-| 🔒 Spring Security | Authentication & Authorization |
-| 🔑 JWT | Token Authentication |
-| 🐘 PostgreSQL | Relational Database |
+| ☕ Java 8 | Linguagem Backend |
+| 🌱 Spring Boot | Framework Principal |
+| 🔒 Spring Security | Autenticação e Autorização |
+| 🔑 JWT | Autenticação via Token |
+| 🐘 PostgreSQL | Banco de Dados Relacional |
 | 🗃 Spring Data JPA | ORM |
-| 🔥 Hibernate | Persistence |
-| 📦 Maven | Dependency Management |
-| ⚡ Lombok | Boilerplate Reduction |
-| ✅ Bean Validation | Request Validation |
+| 🔥 Hibernate | Persistência |
+| 📦 Maven | Gerenciamento de Dependências |
+| ⚡ Lombok | Redução de Boilerplate |
+| ✅ Bean Validation | Validação de Dados |
 
 </div>
 
 ---
 
-# 📁 Project Structure
+# 📁 Estrutura do Projeto
 
 ```text
 src/main/java/com/danieldev/api
@@ -126,21 +126,21 @@ src/main/java/com/danieldev/api
 
 ---
 
-# 🔐 Authentication
+# 🔐 Autenticação
 
-This API uses JWT Authentication.
+A API utiliza autenticação JWT.
 
-After login, include the token in all protected requests:
+Após realizar login, envie o token em todas as rotas protegidas:
 
 ```http
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer SEU_TOKEN
 ```
 
 ---
 
-# 📌 API Endpoints
+# 📌 Endpoints da API
 
-# 🔑 Authentication
+# 🔑 Autenticação
 
 ## Login
 
@@ -152,7 +152,7 @@ POST /auth/login
 
 ```json
 {
-  "email": "user@email.com",
+  "email": "usuario@email.com",
   "senha": "123456"
 }
 ```
@@ -167,9 +167,9 @@ POST /auth/login
 
 ---
 
-# 👤 Users
+# 👤 Usuários
 
-## Create User
+## Criar Usuário
 
 ```http
 POST /usuarios
@@ -179,16 +179,16 @@ POST /usuarios
 
 ```json
 {
-  "email": "user@email.com",
+  "email": "usuario@email.com",
   "senha": "123456"
 }
 ```
 
 ---
 
-# 🏦 Accounts
+# 🏦 Contas
 
-## Create Account
+## Criar Conta
 
 ```http
 POST /contas
@@ -206,13 +206,13 @@ POST /contas
 
 ---
 
-## Get Balance
+## Consultar Saldo
 
 ```http
 GET /contas/{numeroConta}/saldo
 ```
 
-### Example
+### Exemplo
 
 ```http
 GET /contas/123/saldo
@@ -220,9 +220,9 @@ GET /contas/123/saldo
 
 ---
 
-# 💰 Transactions
+# 💰 Transações
 
-## Deposit
+## Depósito
 
 ```http
 POST /transacoes/deposito
@@ -239,7 +239,7 @@ POST /transacoes/deposito
 
 ---
 
-## Withdraw
+## Saque
 
 ```http
 POST /transacoes/saque
@@ -256,7 +256,7 @@ POST /transacoes/saque
 
 ---
 
-## Transfer
+## Transferência
 
 ```http
 POST /transacoes/transferencia
@@ -274,15 +274,15 @@ POST /transacoes/transferencia
 
 ---
 
-# 📄 Bank Statement
+# 📄 Extrato Bancário
 
-## Get Statement
+## Consultar Extrato
 
 ```http
 GET /extratos/{numeroConta}
 ```
 
-### Example
+### Exemplo
 
 ```http
 GET /extratos/123
@@ -290,23 +290,23 @@ GET /extratos/123
 
 ---
 
-# ⚙️ Environment Variables
+# ⚙️ Variáveis de Ambiente
 
-Configure the following environment variables:
+Configure as seguintes variáveis:
 
 ```env
 DB_URL=jdbc:postgresql://localhost:5432/banking_db
 DB_USERNAME=postgres
-DB_PASSWORD=your_password
+DB_PASSWORD=sua_senha
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=sua_chave_secreta
 ```
 
 ---
 
-# 🗄 Database Setup
+# 🗄 Configuração do Banco
 
-## Create PostgreSQL Database
+## Criar Banco PostgreSQL
 
 ```sql
 CREATE DATABASE banking_db;
@@ -314,9 +314,9 @@ CREATE DATABASE banking_db;
 
 ---
 
-# ▶️ Running the Project
+# ▶️ Executando o Projeto
 
-## Clone Repository
+## Clonar Repositório
 
 ```bash
 git clone https://github.com/DanloxBR/bank-account-api.git
@@ -324,7 +324,7 @@ git clone https://github.com/DanloxBR/bank-account-api.git
 
 ---
 
-## Enter Project Folder
+## Entrar na Pasta
 
 ```bash
 cd bank-account-api
@@ -332,7 +332,7 @@ cd bank-account-api
 
 ---
 
-## Install Dependencies
+## Instalar Dependências
 
 ```bash
 mvn clean install
@@ -340,7 +340,7 @@ mvn clean install
 
 ---
 
-## Run Application
+## Executar Aplicação
 
 ```bash
 mvn spring-boot:run
@@ -348,78 +348,78 @@ mvn spring-boot:run
 
 ---
 
-# 📬 API Testing
+# 📬 Testando a API
 
-You can test the API using:
+Você pode testar utilizando:
 
 - Postman
 - Insomnia
-- Swagger (future implementation)
+- Swagger (implementação futura)
 
 ---
 
-# 🔒 Security Features
+# 🔒 Recursos de Segurança
 
-✅ BCrypt Password Encryption  
-✅ JWT Authentication  
-✅ Protected Endpoints  
-✅ Stateless Security  
-✅ Validation Handling  
+✅ Criptografia BCrypt  
+✅ Autenticação JWT  
+✅ Rotas Protegidas  
+✅ Segurança Stateless  
+✅ Tratamento de Validações  
 
 ---
 
-# 🧠 Software Engineering Concepts
+# 🧠 Conceitos Aplicados
 
-- RESTful API Design
-- SOLID Principles
+- API RESTful
+- Princípios SOLID
 - DTO Pattern
-- Layered Architecture
-- Dependency Injection
-- Exception Handling
-- Transaction Management
+- Arquitetura em Camadas
+- Injeção de Dependência
+- Tratamento de Exceções
+- Gerenciamento de Transações
 
 ---
 
-# 🚀 Future Improvements
+# 🚀 Melhorias Futuras
 
 - Refresh Token
 - Swagger/OpenAPI
-- Docker Support
+- Docker
 - Redis Cache
-- Kafka Integration
+- Kafka
 - RabbitMQ
 - CI/CD Pipeline
-- Unit Tests
-- Integration Tests
-- Role-Based Authorization
-- Monitoring & Observability
-- Microservices Architecture
+- Testes Unitários
+- Testes de Integração
+- Controle de Permissões por Perfil
+- Monitoramento e Observabilidade
+- Arquitetura de Microsserviços
 
 ---
 
 <div align="center">
 
-# 👨‍💻 Author
+# 👨‍💻 Autor
 
 ## Daniel Oliveira
 
-### Backend Java Developer
+### Desenvolvedor Backend Java
 
 🔗 GitHub  
 https://github.com/DanloxBR
 
 ---
 
-# ⭐ Contributing
+# ⭐ Contribuição
 
-Contributions, issues, and feature requests are welcome.
+Contribuições, issues e sugestões são bem-vindas.
 
-Feel free to fork this repository and submit a pull request.
+Sinta-se à vontade para abrir um Pull Request.
 
 ---
 
-# 📄 License
+# 📄 Licença
 
-This project is licensed under the MIT License.
+Este projeto está sob a licença MIT.
 
 </div>
