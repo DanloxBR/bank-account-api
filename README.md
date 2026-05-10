@@ -292,11 +292,20 @@ GET /extratos/123
 Configure as seguintes variáveis:
 
 ```env
-DB_URL=jdbc:postgresql://localhost:5432/banking_db
-DB_USERNAME=postgres
-DB_PASSWORD=sua_senha
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.datasource.driver-class-name=org.postgresql.Driver
 
-JWT_SECRET=sua_chave_secreta
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+jwt.secret=${JWT_SECRET}
+jwt.expiration=86400000
+
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+
 ```
 
 ---
@@ -350,8 +359,7 @@ mvn spring-boot:run
 Você pode testar utilizando:
 
 - Postman
-- Insomnia
-- Swagger (implementação futura)
+- Swagger
 
 ---
 
@@ -374,23 +382,6 @@ Você pode testar utilizando:
 - Injeção de Dependência
 - Tratamento de Exceções
 - Gerenciamento de Transações
-
----
-
-# 🚀 Melhorias Futuras
-
-- Refresh Token
-- Swagger/OpenAPI
-- Docker
-- Redis Cache
-- Kafka
-- RabbitMQ
-- CI/CD Pipeline
-- Testes Unitários
-- Testes de Integração
-- Controle de Permissões por Perfil
-- Monitoramento e Observabilidade
-- Arquitetura de Microsserviços
 
 ---
 
