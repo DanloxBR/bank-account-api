@@ -137,9 +137,6 @@ Authorization: Bearer SEU_TOKEN
 ```
 
 ---
-
-# 📌 Endpoints da API
-
 # 🔑 Autenticação
 
 ## Login
